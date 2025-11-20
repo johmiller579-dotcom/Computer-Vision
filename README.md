@@ -1,1 +1,45 @@
-# Computer-Vision
+This project applies Google’s Teachable Machine to develop a computer vision model that classifies images of three objects—scissors, a stapler, and an air freshener—with real-time prediction capability.
+1. Model Performance & Iteration
+
+My first trained model had an accuracy of around 80–85% when identifying scissors, a stapler, and an air freshener. It could generally tell the difference between the objects, but the confidence scores were not always consistent, especially when the object was shown at an angle.
+
+To improve the model, I added more training images for each object and made sure the pictures were taken from different angles, distances, and backgrounds. I especially focused on adding more diverse photos of the air freshener because the model struggled with that class the most. These changes increased the accuracy to around 95%, and the confidence scores became more stable and higher overall.
+
+2. Challenges & Observations
+
+The stapler was the easiest for the model to recognize because it had a distinct shape and solid color, which made it very different from the other objects.
+
+The scissors were more challenging because the shape changed depending on whether they were open or closed, and the metal sometimes reflected light, which affected recognition.
+
+When I showed the model an object that was not part of the training data (like a phone), the model still tried to classify it as one of the three objects but with very low confidence scores. This is significant because it shows that the model does not “know” when something is completely new — it can only choose the closest match it was trained on.
+
+3. Bias in AI
+
+If I only trained the “mug” class using pictures of one specific mug, the model would probably perform very poorly when trying to recognize someone else’s mug that looked different. This shows how biased training data leads to biased results, because the model only learns one narrow version of what a “mug” looks like.
+
+If all my images were taken in bright lighting, the model would likely struggle in a dark or shadowy environment, because it never learned how the objects look in other lighting conditions. This shows why diverse data is important for creating a more reliable and fair model.
+
+4. Model Limitations & Usefulness
+
+Some key limitations of my model are:
+
+It only recognizes three specific objects
+
+It depends heavily on good lighting and clear images
+
+It cannot adapt or improve unless it is retrained with new data
+
+Being able to download and share the model files (like model.json and weights.bin) is useful because it allows other people to reuse, test, or improve my model. It also makes it possible to integrate the model into websites or applications, which is important for real-world deployment.
+
+5. Real-World Applications & Ethics
+
+Potential real-world uses for similar image classification models include:
+
+Sorting and organizing items in a warehouse
+
+Assisting in recycling waste separation
+
+Helping visually impaired users identify objects
+
+One important ethical concern is privacy. If image recognition is used without people’s consent or in areas where they expect privacy, it can lead to misuse or harm. Developers must be careful to use this technology responsibly and transparently.
+One interesting discovery was how quickly the model’s performance improved just by adding more varied training images. It showed me how important data quality and diversity really are in machine learning.
