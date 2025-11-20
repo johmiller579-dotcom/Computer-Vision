@@ -7,7 +7,7 @@ List the objects your model was trained to identify:
 
 My first trained model had an accuracy of around 80–85% when identifying the three objects: air freshener, stapler, and scissors. At first, the model sometimes confused the objects when they were held at different angles or partially blocked, which caused the confidence scores to be inconsistent.
 
-To improve performance, I added more images of each object and made sure the images were taken from multiple angles, distances, and backgrounds. Since the model takes in images sized at 224 × 224 pixels, I also made sure the object was clearly visible in the frame. These changes helped the model learn more variation, and the accuracy improved to around 95%. After retraining, the confidence scores were much more stable and consistently higher during testing.
+To improve performance, I added more images of each object and made sure the images were taken from multiple angles, distances, and backgrounds. I also made sure the object was clearly visible in the frame. These changes helped the model learn more variation, and the accuracy improved to around 95%. After retraining, the confidence scores were much more stable and consistently higher during testing.
 
 2. Challenges & Observations
 
