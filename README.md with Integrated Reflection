@@ -1,4 +1,8 @@
-This project applies Google’s Teachable Machine to develop a computer vision model that classifies images of three objects—scissors, a stapler, and an air freshener—with real-time prediction capability.
+This project applies Google’s Teachable Machine to develop a computer vision model that classifies images of three objects—scissors, a stapler, and an air freshener—with real-time prediction capability.## Classes Identified
+List the objects your model was trained to identify:
+* Class 1 (Air Freshener)
+* Class 2 (Sisscors)
+* Class 3 (Stapler)
 1. Model Performance & Iteration
 
 My first trained model had an accuracy of around 80–85% when identifying scissors, a stapler, and an air freshener. It could generally tell the difference between the objects, but the confidence scores were not always consistent, especially when the object was shown at an angle.
