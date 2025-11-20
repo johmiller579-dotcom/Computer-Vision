@@ -5,23 +5,23 @@ List the objects your model was trained to identify:
 * Class 3 (Stapler)
 1. Model Performance & Iteration
 
-My first trained model had an accuracy of around 80–85% when identifying scissors, a stapler, and an air freshener. It could generally tell the difference between the objects, but the confidence scores were not always consistent, especially when the object was shown at an angle.
+My first trained model had an accuracy of around 80–85% when identifying the three objects: air freshener, stapler, and scissors. At first, the model sometimes confused the objects when they were held at different angles or partially blocked, which caused the confidence scores to be inconsistent.
 
-To improve the model, I added more training images for each object and made sure the pictures were taken from different angles, distances, and backgrounds. I especially focused on adding more diverse photos of the air freshener because the model struggled with that class the most. These changes increased the accuracy to around 95%, and the confidence scores became more stable and higher overall.
+To improve performance, I added more images of each object and made sure the images were taken from multiple angles, distances, and backgrounds. Since the model takes in images sized at 224 × 224 pixels, I also made sure the object was clearly visible in the frame. These changes helped the model learn more variation, and the accuracy improved to around 95%. After retraining, the confidence scores were much more stable and consistently higher during testing.
 
 2. Challenges & Observations
 
-The stapler was the easiest for the model to recognize because it had a distinct shape and solid color, which made it very different from the other objects.
+The stapler was the easiest object for the model to learn because it had a solid, recognizable shape and color, which made it stand out from the other two objects.
 
-The scissors were more challenging because the shape changed depending on whether they were open or closed, and the metal sometimes reflected light, which affected recognition.
+The scissors were the most challenging because their shape changes depending on whether they are open or closed, and the metal blades sometimes created reflections that confused the model.
 
-When I showed the model an object that was not part of the training data (like a phone), the model still tried to classify it as one of the three objects but with very low confidence scores. This is significant because it shows that the model does not “know” when something is completely new — it can only choose the closest match it was trained on.
+When I tested the model with an object it had never seen before (such as a phone), the model still tried to classify it as one of the three trained objects, but with very low confidence percentages. This is important because it shows that the model doesn’t actually “know” what new objects are—it can only make a best guess using what it was trained on, even if it’s wrong.
 
 3. Bias in AI
 
-If I only trained the “mug” class using pictures of one specific mug, the model would probably perform very poorly when trying to recognize someone else’s mug that looked different. This shows how biased training data leads to biased results, because the model only learns one narrow version of what a “mug” looks like.
+If I only trained a “mug” class using pictures of my one specific mug, the model would probably struggle to recognize other people’s mugs that look different in shape, color, or design. This clearly shows how bias can be created by limited training data because the model only learns a very narrow version of the object.
 
-If all my images were taken in bright lighting, the model would likely struggle in a dark or shadowy environment, because it never learned how the objects look in other lighting conditions. This shows why diverse data is important for creating a more reliable and fair model.
+If all my images were taken under bright, direct lighting, the model would likely perform poorly in dimmer rooms or shadowy areas. This demonstrates how a lack of diversity in training conditions can make a model less reliable and more biased, since it is not prepared for real-world differences.
 
 4. Model Limitations & Usefulness
 
@@ -29,21 +29,26 @@ Some key limitations of my model are:
 
 It only recognizes three specific objects
 
-It depends heavily on good lighting and clear images
+It is sensitive to lighting, background, and object positioning
 
-It cannot adapt or improve unless it is retrained with new data
+It cannot recognize anything outside its trained categories
 
-Being able to download and share the model files (like model.json and weights.bin) is useful because it allows other people to reuse, test, or improve my model. It also makes it possible to integrate the model into websites or applications, which is important for real-world deployment.
+It must be retrained to improve or add new objects
+
+Being able to download the trained files such as model.json and weights.bin is valuable because it allows others to reuse, test, modify, or deploy my model in an application or website. These files contain the model’s structure and learned knowledge, which makes it possible to integrate into real-world projects or share on GitHub.
 
 5. Real-World Applications & Ethics
 
-Potential real-world uses for similar image classification models include:
+Examples of real-world uses for a similar image classification model include:
 
-Sorting and organizing items in a warehouse
+Sorting items in a warehouse or office environment
 
-Assisting in recycling waste separation
+Assisting with recycling and waste separation
 
 Helping visually impaired users identify objects
 
-One important ethical concern is privacy. If image recognition is used without people’s consent or in areas where they expect privacy, it can lead to misuse or harm. Developers must be careful to use this technology responsibly and transparently.
-One interesting discovery was how quickly the model’s performance improved just by adding more varied training images. It showed me how important data quality and diversity really are in machine learning.
+One important ethical concern is privacy. If image recognition is used without permission or clear transparency, it could be used to track or monitor people. This is why developers must be careful to use AI technologies responsibly, fairly, and with consent.
+
+(Optional) Challenges Faced / Interesting Discoveries
+
+One interesting thing I discovered was how dramatically accuracy can improve by simply adding more diverse images. This showed me that in machine learning, data quality and variety are just as important as the model itself.
